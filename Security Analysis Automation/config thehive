@@ -1,1 +1,84 @@
+========================
+🗄️ Cassandra Configuration
+========================
+cluster_name: 'Dfire'
+listen_address: localhost / <VPS_IP>
+rpc_address: localhost / <VPS_IP>
+seed_provider: 127.0.0.1:7000 / <VPS_IP>:7000
 
+# Reset Cassandra data
+sudo systemctl stop cassandra.service
+sudo rm -rf /var/lib/cassandra/*
+sudo systemctl start cassandra.service
+sudo systemctl status cassandra.service   # Expected: active (running)
+
+# Note:
+# - If using <VPS_IP>, make sure port 7000 is open in the firewall.
+# - If all services are on the same host, you can use localhost.
+
+
+========================
+📦 Elasticsearch Configuration
+========================
+# Edit config file:
+/etc/elasticsearch/elasticsearch.yml
+-------------------------------------
+cluster.name: thehive
+node.name: node-1
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+network.host: localhost / <VPS_IP>
+http.port: 9200
+cluster.initial_master_nodes: ["node-1"]
+
+# Start & enable service:
+sudo systemctl start elasticsearch.service
+sudo systemctl enable elasticsearch.service
+sudo systemctl status elasticsearch.service   # Expected: active (running)
+
+# 🔐 Security Hardening (Log4Shell mitigation & JVM settings):
+/etc/elasticsearch/jvm.options.d/jvm.options
+--------------------------------------------
+-Dlog4j2.formatMsgNoLookups=true   # Disables dangerous Log4j feature
+-Xms2g                             # Minimum RAM: 2 GB
+-Xmx2g                             # Maximum RAM: 2 GB
+
+# Note:
+# - If using <VPS_IP>, make sure port 9200 is open in the firewall.
+# - If all services are on the same host, use localhost.
+
+
+========================
+🕵️ TheHive Configuration
+========================
+# Fix permissions:
+ls -la /opt/thp
+sudo chown -R thehive:thehive /opt/thp
+ls -la /opt/thp   # Expected: thehive thehive
+
+# Edit TheHive config:
+Database:
+  cluster-name = Dfire
+  hostname = localhost / <VPS_IP>
+
+Storage:
+  localfs.location = /opt/thp/thehive/files
+
+Service:
+  URL: http://localhost:9000
+  Cortex + MISP integration enabled
+
+# Start & enable service:
+sudo systemctl start thehive.service
+sudo systemctl enable thehive.service
+sudo systemctl status thehive.service   # Expected: active (running)
+
+# 🔑 Default credentials:
+Username: admin@thehive.local
+Password: secret
+
+# 🌐 Access TheHive:
+http://localhost:9000
+
+# Note:
+# - If TheHive is hosted on a VPS and you want external access, replace "localhost" in the URL with <VPS_IP> and open port 9000.
