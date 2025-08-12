@@ -47,4 +47,13 @@ The alert should appear in Wazuh Dashboard.
 
 3️⃣ Wazuh → Shuffle Integration
 
+Add to /var/ossec/etc/ossec.conf:
 
+```xml
+<integration>
+    <name>shuffle</name>
+    <hook_url>https://shuffler.io/api/v1/hooks/webhook_cf143b9d-08d3-4ddb-a372->
+    <rule_id>100002</rule_id>
+    <alert_format>json</alert_format>
+</integration>
+```
