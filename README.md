@@ -3,4 +3,4 @@ This project serves as a practical demonstration of Security Orchestration, Auto
 
 ![SOC Automation Diagram](Security%20Analysis%20Automation/Diagram-SOC.png)
 
-🔍 PowerShell EncodedCommand Detection & Automated Response
+Scenario 1 >> 🔍 PowerShell EncodedCommand Detection & Automated Response
