@@ -24,3 +24,7 @@ This project demonstrates how to detect malicious PowerShell commands using the 
 Detects any PowerShell command containing -encodedCommand.
 
 MITRE Technique: T1059.001 – PowerShell.
+
+2️⃣ Testing
+
+Run on a Windows system with Wazuh Agent:
