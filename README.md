@@ -18,4 +18,4 @@ This project serves as a practical demonstration of Security Orchestration, Auto
 </rule>
 ```
 Detects any PowerShell command containing -encodedCommand.
-
+MITRE Technique: T1059.001 – PowerShell.
