@@ -38,7 +38,7 @@ Hello Attacker
 
 The alert should appear in Wazuh Dashboard.
 
-![SOC Automation Diagram](Security%20Analysis%20Automation/Wazuh-alert.PNG)
+![SOC Automation Diagram](image/Wazuh-alert.PNG)
 
 3️⃣ Wazuh → Shuffle Integration
 
