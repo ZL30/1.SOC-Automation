@@ -57,3 +57,7 @@ Add to /var/ossec/etc/ossec.conf:
     <alert_format>json</alert_format>
 </integration>
 ```
+Restart Wazuh Manager:
+```xml
+sudo systemctl restart wazuh-manager
+```
