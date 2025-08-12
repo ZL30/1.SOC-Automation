@@ -35,6 +35,12 @@ $bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
 $encodedcommand = [Convert]::ToBase64String($bytes)
 $encodedcommand
 VwByAGkAdABlAC0ASABvAHMAdAAgACIASABlAGwAbABvACAAQQB0AHQAYQBjAGsAZQByACIA
+```
+```xml
 powershell.exe -EncodedCommand VwByAGkAdABlAC0ASABvAHMAdAAgACIASABlAGwAbABvACAAQQB0AHQAYQBjAGsAZQByACIA
 Hello Attacker
 ```
+
+The alert should appear in Wazuh Dashboard.
+
+![SOC Automation Diagram](Security%20Analysis%20Automation/Wazuh-alert.PNG)
