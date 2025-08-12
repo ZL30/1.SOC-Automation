@@ -3,6 +3,10 @@ This project serves as a practical demonstration of Security Orchestration, Auto
 
 ![SOC Automation Diagram](Security%20Analysis%20Automation/Diagram-SOC.png)
 
+🔍 PowerShell EncodedCommand Detection & Automated Response
+
+This project demonstrates how to detect malicious PowerShell commands using the -EncodedCommand flag with Wazuh, then automate the incident response using Shuffle.io, TheHive.
+
 ### 🛠 Steps
 
 1️⃣ Wazuh Custom Rule 
