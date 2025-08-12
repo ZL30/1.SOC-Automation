@@ -3,9 +3,9 @@ This project serves as a practical demonstration of Security Orchestration, Auto
 
 ![SOC Automation Diagram](Security%20Analysis%20Automation/Diagram-SOC.png)
 
-### Detection Logic
+### 🛠 Steps
 
-The project uses a custom Wazuh rule to detect suspicious PowerShell EncodedCommands.
+1️⃣ Wazuh Custom Rule 
 
 ```xml
 <rule id="100002" level="10">
