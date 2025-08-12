@@ -27,4 +27,14 @@ MITRE Technique: T1059.001 – PowerShell.
 
 2️⃣ Testing
 
-Run on a Windows system with Wazuh Agent:
+Run Administrator PowerShell on a Windows system with Wazuh Agent:
+
+```xml
+$command = 'Write-Host "Hello Attacker"'
+$bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
+$encodedcommand = [Convert]::ToBase64String($bytes)
+$encodedcommand
+VwByAGkAdABlAC0ASABvAHMAdAAgACIASABlAGwAbABvACAAQQB0AHQAYQBjAGsAZQByACIA
+powershell.exe -EncodedCommand VwByAGkAdABlAC0ASABvAHMAdAAgACIASABlAGwAbABvACAAQQB0AHQAYQBjAGsAZQByACIA
+Hello Attacker
+```
