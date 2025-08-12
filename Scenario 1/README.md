@@ -1,4 +1,4 @@
-![SOC Automation Diagram](Security%20Analysis%20Automation/Diagram-SOC.png)
+![SOC Automation Diagram](Scenario%201/image/Wazuh-alert.PNG)
 
 🔍 PowerShell EncodedCommand Detection & Automated Response
 
