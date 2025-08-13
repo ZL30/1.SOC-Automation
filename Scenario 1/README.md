@@ -68,6 +68,8 @@ sudo systemctl restart wazuh-manager
 ```
 
 
-1.This is the first step in the automation workflow: The Shuffle platform receives "Alerts" from the Wazuh Manager.
+1.🔄This is the first step in the automation workflow: The Shuffle platform receives "Alerts" from the Wazuh Manager:
 
-![SOC Automation Diagram](image/Wazuh-alert.PNG)
+![SOC Automation Diagram](image/1.shuffler.PNG)
+
+
