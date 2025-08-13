@@ -72,4 +72,15 @@ sudo systemctl restart wazuh-manager
 
 ![SOC Automation Diagram](image/1.shuffler.PNG)
 
+![SOC Automation Diagram](image/2.shuffler.PNG)
+
+2.📊This stage highlights a crucial step in the automation workflow, where data related to a security alert is enriched. The process begins by receiving an alert from Wazuh, which leads to:
+
+Hash Calculation (SHA256): The SHA256 hash value of the threat or suspicious file is automatically calculated.
+VirusTotal Query: The hash value calculated in the previous step is used to send an automated query to the VirusTotal platform.
+Getting a Report: The required action from VirusTotal is to "Get a hash report," which provides detailed information about the file's reputation and associated threats.
+
+This stage aims to provide threat intelligence data quickly and automatically, helping the security analyst make more informed decisions faster.
+
+
 
