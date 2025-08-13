@@ -43,14 +43,16 @@ Hello Attacker
 🛡️ This PowerShell example encodes the ```command Write-Host "Hello Attacker"``` into Base64 using ```[System.Text.Encoding]::Unicode.GetBytes()``` and ```[Convert]::ToBase64String()```. Attackers often use this -EncodedCommand technique to hide the real command and evade basic detection, making it a common indicator for malicious PowerShell activity.
 
 
-⚠️ High-Severity Alert — Wazuh detected the execution of a PowerShell command using the -EncodedCommand parameter on host Win10 (192.168.100.6). This technique (MITRE ATT&CK T1059.001) is commonly used by attackers to run obfuscated scripts and evade detection. The captured command was encoded in Base64, indicating a possible malicious or stealth activity requiring immediate investigation.
+3️⃣ The alert should appear in Wazuh Dashboard.
+
+⚠️ High-Severity Alert — Wazuh detected the execution of a PowerShell command using the -EncodedCommand parameter on host Win10 (xx.xx.xx.xx). This technique (MITRE ATT&CK T1059.001) is commonly used by attackers to run obfuscated scripts and evade detection. The captured command was encoded in Base64, indicating a possible malicious or stealth activity requiring immediate investigation.
 
 
 ![SOC Automation Diagram](image/Wazuh-alert.PNG)
 
-3️⃣ Wazuh → Shuffle Integration
+4️⃣ Wazuh → Shuffle Integration
 
-Add to /var/ossec/etc/ossec.conf:
+Add to ```/var/ossec/etc/ossec.conf```:
 
 ```xml
 <integration>
