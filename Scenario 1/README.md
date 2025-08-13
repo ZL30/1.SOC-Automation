@@ -82,5 +82,5 @@ Getting a Report: The required action from VirusTotal is to "Get a hash report,"
 
 This stage aims to provide threat intelligence data quickly and automatically, helping the security analyst make more informed decisions faster.
 
-
+![SOC Automation Diagram](image/4.shuffler.PNG)
 
