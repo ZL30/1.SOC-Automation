@@ -6,6 +6,11 @@ This project demonstrates how to detect malicious PowerShell commands using the 
 
 1️⃣ Wazuh Custom Rule 
 
+To create this rule, edit ```sudo nano
+/var/ossec/etc/rules/local_rules.xml```
+ on the Wazuh Manager, add the <rule> block with the desired id, field pattern, description, and MITRE tag, then restart the Wazuh Manager to apply changes.
+
+
 ```xml
 <rule id="100002" level="10">
   <if_sid>92057</if_sid>
@@ -16,9 +21,8 @@ This project demonstrates how to detect malicious PowerShell commands using the 
   </mitre>
 </rule>
 ```
-Detects any PowerShell command containing -encodedCommand.
 
-MITRE Technique: T1059.001 – PowerShell.
+This Wazuh rule detects the execution of PowerShell commands using the -EncodedCommand parameter, which is commonly leveraged by attackers to obfuscate malicious scripts and evade detection. Triggered when the specified pattern is found in win.eventdata.commandline logs, with a high severity level (10). Associated with MITRE ATT&CK technique T1059.001 (PowerShell).
 
 2️⃣ Testing
 
@@ -36,7 +40,11 @@ powershell.exe -EncodedCommand VwByAGkAdABlAC0ASABvAHMAdAAgACIASABlAGwAbABvACAAQ
 Hello Attacker
 ```
 
-The alert should appear in Wazuh Dashboard.
+🛡️ This PowerShell example encodes the ```command Write-Host "Hello Attacker"``` into Base64 using ```[System.Text.Encoding]::Unicode.GetBytes()``` and ```[Convert]::ToBase64String()```. Attackers often use this -EncodedCommand technique to hide the real command and evade basic detection, making it a common indicator for malicious PowerShell activity.
+
+
+⚠️ High-Severity Alert — Wazuh detected the execution of a PowerShell command using the -EncodedCommand parameter on host Win10 (192.168.100.6). This technique (MITRE ATT&CK T1059.001) is commonly used by attackers to run obfuscated scripts and evade detection. The captured command was encoded in Base64, indicating a possible malicious or stealth activity requiring immediate investigation.
+
 
 ![SOC Automation Diagram](image/Wazuh-alert.PNG)
 
