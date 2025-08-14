@@ -103,3 +103,5 @@ This stage aims to provide threat intelligence data quickly and automatically, h
 After the security alert is enriched with data from VirusTotal, it is automatically converted into a new alert in TheHive :
 
 ![SOC Automation Diagram](image/7.shuffler.PNG)
+![SOC Automation Diagram](image/8.shuffler.PNG)
+![SOC Automation Diagram](image/9.shuffler.PNG)
