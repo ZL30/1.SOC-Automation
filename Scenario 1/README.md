@@ -21,6 +21,7 @@ To create this rule, edit ```sudo nano
   </mitre>
 </rule>
 ```
+![SOC Automation Diagram](image/Rules.PNG)
 
 This Wazuh rule detects the execution of PowerShell commands using the -EncodedCommand parameter, which is commonly leveraged by attackers to obfuscate malicious scripts and evade detection. Triggered when the specified pattern is found in win.eventdata.commandline logs, with a high severity level (10). Associated with MITRE ATT&CK technique T1059.001 (PowerShell).
 
