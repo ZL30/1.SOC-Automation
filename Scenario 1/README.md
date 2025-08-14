@@ -105,3 +105,10 @@ After the security alert is enriched with data from VirusTotal, it is automatica
 ![SOC Automation Diagram](image/7.shuffler.PNG)
 ![SOC Automation Diagram](image/8.shuffler.PNG)
 ![SOC Automation Diagram](image/9.shuffler.PNG)
+
+🔔 Email Notification
+
+This final stage is an automated notification via email. The purpose is to alert the security team after a threat has been detected by Wazuh and enriched with data from VirusTotal. The email is sent to xxxxx@Email.com :
+
+![SOC Automation Diagram](image/11.shuffler.PNG)
+![SOC Automation Diagram](image/11.shuffler.PNG)
