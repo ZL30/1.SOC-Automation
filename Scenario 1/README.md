@@ -83,7 +83,7 @@ Getting a Report: The required action from VirusTotal is to "Get a hash report,"
 
 This stage aims to provide threat intelligence data quickly and automatically, helping the security analyst make more informed decisions faster.3
 
-![SOC Automation Diagram](image/6.shuffler.PNG)
+![SOC Automation Diagram](image/5.shuffler.PNG)
 ![SOC Automation Diagram](image/2.shuffler.PNG)
 
 🚨 Summary of Key Data from VirusTotal Report
@@ -98,3 +98,6 @@ This stage aims to provide threat intelligence data quickly and automatically, h
 | Reputation | -22 |
 | Original Product | Microsoft® Windows® Operating System |
 | Publisher | Microsoft Corporation |
+
+🚨 The diagram illustrates the role of TheHive platform in security incident management.
+After the security alert is enriched with data from VirusTotal, it is automatically converted into a new alert in TheHive.
