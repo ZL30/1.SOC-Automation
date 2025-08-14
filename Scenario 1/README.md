@@ -84,5 +84,17 @@ Getting a Report: The required action from VirusTotal is to "Get a hash report,"
 This stage aims to provide threat intelligence data quickly and automatically, helping the security analyst make more informed decisions faster.3
 
 ![SOC Automation Diagram](image/6.shuffler.PNG)
-![SOC Automation Diagram](image/4.shuffler.PNG)
+![SOC Automation Diagram](image/2.shuffler.PNG)
 
+🚨 Summary of Key Data from VirusTotal Report
+
+| Field | Details |
+|:---|:---|
+| Name | PowerShell.EXE |
+| Hash (SHA256) | 9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3 |
+| Detection | 24 malicious, 17 harmless |
+| Sandbox Verdict | MALWARE (from Yomi Hunter and Zenbox) |
+| Sigma Rules | 1 high, 2 medium, 1 low |
+| Reputation | -22 |
+| Original Product | Microsoft® Windows® Operating System |
+| Publisher | Microsoft Corporation |
